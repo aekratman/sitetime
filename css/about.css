@@ -1,4 +1,3 @@
-/* Centering text and applying Comfortaa font to headers */
 h1, h3, p, div {
   text-align: center;
 }
@@ -7,7 +6,6 @@ h1, h3 {
   font-family: 'comfortaa';
 }
 
-/* Flexbox settings */
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -16,6 +14,17 @@ h1, h3 {
 .flexcol {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .flexcenter {
@@ -26,76 +35,79 @@ h1, h3 {
 
 .flexrowcenter {
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   justify-content: center;
 }
-
-
-
-
-
 
 .sidebar {
   margin-left: auto;
   padding: 10px;
   background-color: #f4f4f4;
   flex: 1;
-  width: 300px; /* Fixed width */
-  max-width: 300px; /* Fixed width */
+  width: 300px;
+  max-width: 300px;
 }
 
-/* Icon size settings */
 .iconsize {
   max-width: 100%;
   height: auto;
 }
 
-/* Button styling */
 .button a {
   display: block;
-  padding: 10px;
+  padding: 5px 10px;
   background-color: #007bff;
   color: white;
   text-align: center;
   margin: 5px 0;
   text-decoration: none;
+  font-size: 14px;
 }
 
-/* Wide box settings */
 .widebox {
   padding: 20px;
   flex: 2;
 }
 
-/* Responsive settings for iPhones */
-@media (max-width: 428px) {
-  .flex {
+@media (max-width: 768px) {
+  .flex,
+  .flexrow {
     flex-direction: column;
     align-items: center;
   }
 
-  .sidebar, .buttonbox, .widebox {
+  .sidebar, .buttonbox, .widebox, .leftbox {
     width: 100% !important;
-    margin: 0;
+    margin: 0 auto 10px auto;
     padding: 10px !important;
     box-sizing: border-box;
   }
-  
-  .sidebar, .buttonbox, .widebox {
-    margin-left: auto;
-    margin-right: auto;
+
+  .header-bar {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 10px;
+    width: 100%;
   }
-  
-  .buttonbox {
-    margin-top: 10px;
+
+  .header-bar .button a {
+    font-size: 16px;
+    padding: 3px 3px;
   }
-  
-  .widebox {
-    margin-top: 10px;
+
+  .header-bar img {
+    width: 70px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
-/* Overlay effect */
 .container2 {
   position: relative;
 }
@@ -133,21 +145,18 @@ h1, h3 {
   text-align: center;
 }
 
-/* Float up effect */
 .floatup:hover {
   transition-duration: 0.5s;
   translate: 0px -5px;
   filter: drop-shadow(0px 5px 10px #0a051c);
 }
 
-/* Grid container */
 .gridcontainer {
   display: grid;
   background-color: black;
   grid-template-columns: auto auto auto;
 }
 
-/* Background and row settings */
 .bodybackground {
   background-color: #85DCBA;
   background-repeat: no-repeat;
@@ -159,17 +168,10 @@ h1, h3 {
   display: flex;
 }
 
-/* Image and center alignment settings */
 .resize {
   width: 10%;
   height: 10%;
 }
-/* 
-.basesize {
-  width: 80%;
-  max-width:fit-content;
-} */
-
 
 .centernoresize, .center, .center2 {
   display: block;
@@ -190,7 +192,6 @@ h1, h3 {
   margin-left: auto;
 }
 
-/* Dropdown settings */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -210,11 +211,18 @@ h1, h3 {
   display: block;
 }
 
-/* Container settings */
 .container {
   display: flex;
+  flex-direction: column;
   margin-left: 20rem;
   margin-right: 20rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 .widebox, .sidebar, .centerbox, .buttonbox {
@@ -225,7 +233,7 @@ h1, h3 {
 }
 
 .widebox {
-  width: 600px;
+  width: auto;
 }
 
 .centerbox {
@@ -239,7 +247,6 @@ h1, h3 {
   border: 5px solid green;
 }
 
-/* Link settings */
 a:link, a:visited {
   color: #ADD8E6;
   background-color: transparent;
@@ -251,16 +258,16 @@ a:hover, a:active {
   background-color: transparent;
 }
 
-/* Button settings */
 .button {
   outline: 0;
   display: inline-block;
-  padding: 10px;
   color: white;
   background-color: grey;
   text-align: center;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 5px;
 }
 
 button:hover, button.active {
@@ -277,20 +284,19 @@ button:hover, a:hover {
   opacity: 0.7;
 }
 
-/* Font settings */
 @font-face {
   font-family: 'firesans';
-  src: url(font/FiraSans-ExtraLight.otf);
+  src: url(/font/FiraSans-ExtraLight.otf);
 }
 
 @font-face {
   font-family: 'comfortaa';
-  src: url(font/comfortaa.ttf);
+  src: url(/font/comfortaa.ttf);
 }
 
 @font-face {
   font-family: 'amatic';
-  src: url(font/AmaticSC-Regular.ttf);
+  src: url(/font/AmaticSC-Regular.ttf);
 }
 
 .amatic {
@@ -305,43 +311,53 @@ button:hover, a:hover {
   font-family: 'firesans';
 }
 
-/* Hidden element */
 .rec {
   display: none;
 }
 
-/* General box-sizing */
 * {
   box-sizing: border-box;
 }
 
-
-
-
+body {
+  font-family: var(--global-font, Arial);
+  font-size: var(--global-font-size, 16px);
+  color: var(--global-font-color, #000);
+  padding: 20px;
+  background: #f1f1f1;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
 
 .header-container {
   position: relative;
   height: auto;
-  margin-bottom: var(--box-spacing, 20px);
+  margin-bottom: 20px;
+}
+
+.display_row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start;
 }
 
 .header-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px 20px;
+  height: auto;
+  padding: 10px;
   background: grey;
   border: 3px solid black;
-  border-radius: var(--box-border-radius, 10px);
-  max-width: 70%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
   margin: 0 auto;
 }
 
 .header-bar img {
   height: 80px;
   width: auto;
+  margin-right: 10px;
 }
 
 .round-corners {
@@ -349,29 +365,25 @@ button:hover, a:hover {
   border-radius: var(--box-border-radius, 10px);
 }
 
-.display_row {
-  display: flex;
-  overflow: hidden;
-  flex-wrap: wrap;
+.website-title {
+  position: absolute;
+  top: 40px;
+  right: 0;
 }
 
-@media (max-width: 768px) {
-  .header-bar {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .header-bar img {
-    height: 60px;
-    margin-bottom: 8px;
-  }
-
-  .header-bar .button a {
-    font-size: 16px;
-    padding: 8px 12px;
-  }
+.status-left {
+  z-index: 2;
 }
 
+.leftbox {
+  margin-left: auto;
+  width: 45%;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgfixer {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

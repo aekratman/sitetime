@@ -280,17 +280,17 @@ button:hover, a:hover {
 /* Font settings */
 @font-face {
   font-family: 'firesans';
-  src: url(font/FiraSans-ExtraLight.otf);
+  src: url(/font/FiraSans-ExtraLight.otf);
 }
 
 @font-face {
   font-family: 'comfortaa';
-  src: url(font/comfortaa.ttf);
+  src: url(/font/comfortaa.ttf);
 }
 
 @font-face {
   font-family: 'amatic';
-  src: url(font/AmaticSC-Regular.ttf);
+  src: url(/font/AmaticSC-Regular.ttf);
 }
 
 .amatic {
